@@ -132,27 +132,30 @@
       opacity: 0.85;
     }
 
-    /* ── Contact link ──────────────────────────────────────── */
-    .contact {
+    /* ── CTA Button ──────────────────────────────────────── */
+    .cta-button {
       font-family: 'Lora', serif;
-      font-size: 0.875rem;
-      color: var(--subtext);
-      opacity: 0.6;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      background-color: var(--electric);
       text-decoration: none;
       letter-spacing: 0.04em;
-      transition: opacity 0.2s ease, color 0.2s ease;
+      padding: 0.75rem 2.25rem;
+      border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.15s ease;
     }
 
-    .contact:hover {
-      opacity: 1;
-      color: var(--copper);
+    .cta-button:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
     }
 
     /* ── Footer ────────────────────────────────────────────── */
     .footer {
       position: absolute;
       bottom: 2rem;
-      font-family: 'Lora', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 0.75rem;
       color: var(--subtext);
       opacity: 0.35;
@@ -190,9 +193,9 @@
 
       <hr class="divider" />
 
-      <p class="tagline">Something's coming.</p>
+      <p class="tagline">Coming soon.</p>
 
-      <a class="contact" href="mailto:hello@atlasmerlin.com">hello@atlasmerlin.com</a>
+      <a class="cta-button" href="mailto:hello@atlasmerlin.com">Say Hello</a>
 
     </div>
 
