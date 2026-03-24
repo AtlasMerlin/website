@@ -1,0 +1,164 @@
+/* ============================================================
+   ATLAS MERLIN — Global Styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;700&display=swap');
+
+/* ============================================================
+   Brand Tokens
+   ============================================================ */
+
+:root {
+  --deep-navy:       #0F1A2E;
+  --dark-navy:       #1A2940;
+  --mid-navy:        #2E4057;
+  --copper-light:    #D4873F;
+  --copper-dark:     #DA9048;
+  --electric-orange: #FF6B1A;
+  --warm-white:      #F2F0EB;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Lora', serif;
+
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+
+  --max-width:  1200px;
+  --nav-height: 96px;
+
+  --transition: 250ms ease;
+}
+
+/* ============================================================
+   Theme — light default, dark via OS preference
+   ============================================================ */
+
+:root {
+  --bg:          var(--warm-white);
+  --text:        var(--mid-navy);
+  --heading:     var(--deep-navy);
+  --border:      rgba(15, 26, 46, 0.1);
+
+  --logo-main:   var(--deep-navy);
+  --logo-diamond:var(--copper-light);
+
+  --nav-bg:      var(--warm-white);
+  --nav-text:    var(--deep-navy);
+  --nav-border:  rgba(15, 26, 46, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          var(--deep-navy);
+    --text:        rgba(242, 240, 235, 0.8);
+    --heading:     var(--warm-white);
+    --border:      rgba(242, 240, 235, 0.1);
+
+    --logo-main:   var(--warm-white);
+    --logo-diamond:var(--copper-dark);
+
+    --nav-bg:      var(--deep-navy);
+    --nav-text:    var(--warm-white);
+    --nav-border:  rgba(242, 240, 235, 0.08);
+  }
+}
+
+/* ============================================================
+   Reset
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  color: var(--heading);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem);    font-weight: 700; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.6rem);   font-weight: 600; }
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  max-width: 68ch;
+  color: var(--text);
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section {
+  padding: var(--space-md) 0;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.7rem 1.75rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.btn--primary {
+  background-color: var(--electric-orange);
+  color: var(--warm-white);
+}
+.btn--primary:hover { background-color: #e55a0d; }
+
+.btn--outline {
+  background: transparent;
+  color: var(--nav-text);
+  border: 1.5px solid var(--nav-text);
+}
+.btn--outline:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+}
+
+@media (max-width: 768px) {
+  .section { padding: var(--space-md) 0; }
+}

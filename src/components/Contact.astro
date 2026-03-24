@@ -1,0 +1,284 @@
+---
+---
+
+<section class="contact section" id="contact">
+  <div class="container contact__inner">
+
+    <div class="contact__form-col">
+      <h2 class="contact__heading">Let's Talk</h2>
+      <p class="contact__sub">Whether you've got a specific problem or want to explore what computer vision could do across your operation — we'd like to hear from you.</p>
+
+      <form
+        class="contact__form"
+        action="https://formspree.io/f/xpqyvavy"
+        method="POST"
+      >
+        <div class="contact__row">
+          <div class="contact__field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="contact__field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization" required />
+          </div>
+        </div>
+
+        <div class="contact__field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+
+        <div class="contact__field">
+          <label for="role">Role</label>
+          <input type="text" id="role" name="role" autocomplete="organization-title" />
+        </div>
+
+        <div class="contact__field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell us what you're working on, or what challenge you'd like to solve."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--submit" id="contact-submit">
+          <span class="btn__label">Send Message</span>
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <svg class="btn__tick" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="contact__aside">
+      <div class="contact__aside-inner">
+        <h3>Got a Challenge?</h3>
+        <p>If there's something on your site you wish you could monitor, detect, or measure — tell us about it. If we can point a camera at it, we can probably build a solution.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .contact {
+    background-color: var(--deep-navy);
+    color: var(--warm-white);
+  }
+
+  /* ---- Layout ---- */
+  .contact__inner {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  /* ---- Heading & sub ---- */
+  .contact__heading {
+    color: var(--warm-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__sub {
+    color: rgba(242, 240, 235, 0.7);
+    margin-bottom: var(--space-md);
+    max-width: 52ch;
+  }
+
+  /* ---- Form ---- */
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .contact__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .contact__field label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(242, 240, 235, 0.6);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .contact__field input,
+  .contact__field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--warm-white);
+    background-color: rgba(242, 240, 235, 0.06);
+    border: 1px solid rgba(242, 240, 235, 0.2);
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 150ms ease, background-color 150ms ease;
+    width: 100%;
+    resize: vertical;
+  }
+
+  .contact__field input::placeholder,
+  .contact__field textarea::placeholder {
+    color: rgba(242, 240, 235, 0.3);
+  }
+
+  .contact__field input:focus,
+  .contact__field textarea:focus {
+    border-color: var(--copper-dark);
+    background-color: rgba(242, 240, 235, 0.09);
+  }
+
+  .btn--submit {
+    align-self: flex-start;
+    background-color: var(--electric-orange);
+    color: var(--warm-white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.875rem 2.25rem;
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+    margin-top: var(--space-xs);
+  }
+
+  .btn--submit:hover { background-color: #e55a0d; }
+
+  .btn__spinner,
+  .btn__tick {
+    display: none;
+  }
+
+  /* Loading state */
+  .btn--submit.loading {
+    pointer-events: none;
+  }
+
+  .btn--submit.loading .btn__label  { display: none; }
+  .btn--submit.loading .btn__spinner { display: block; }
+
+  .btn__spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(242, 240, 235, 0.3);
+    border-top-color: var(--warm-white);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Sent state */
+  .btn--submit.sent {
+    pointer-events: none;
+  }
+
+  .btn--submit.sent .btn__label  { display: none; }
+  .btn--submit.sent .btn__tick   { display: block; }
+
+  /* ---- Aside ---- */
+  .contact__aside {
+    padding-top: 0.25rem;
+  }
+
+  .contact__aside-inner {
+    border-left: 2px solid var(--copper-dark);
+    padding-left: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .contact__aside-inner h3 {
+    color: var(--warm-white);
+    font-size: 1.4rem;
+  }
+
+  .contact__aside-inner p {
+    color: rgba(242, 240, 235, 0.7);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .contact__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .contact__aside {
+      border-top: 1px solid rgba(242, 240, 235, 0.1);
+      padding-top: var(--space-md);
+    }
+
+    .contact__aside-inner {
+      border-left: none;
+      padding-left: 0;
+      border-left: 2px solid var(--copper-dark);
+      padding-left: var(--space-md);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact__row {
+      grid-template-columns: 1fr;
+    }
+
+    .btn--submit {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const form   = document.querySelector('.contact__form') as HTMLFormElement;
+  const button = document.getElementById('contact-submit') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    button.classList.add('loading');
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (res.ok) {
+        button.classList.remove('loading');
+        button.classList.add('sent');
+        form.reset();
+      } else {
+        button.classList.remove('loading');
+      }
+    } catch {
+      button.classList.remove('loading');
+    }
+  });
+</script>

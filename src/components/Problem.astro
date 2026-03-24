@@ -1,0 +1,97 @@
+---
+---
+
+<section class="problem section" id="problem">
+  <div class="container">
+
+    <div class="problem__text">
+      <h2 class="problem__heading">By the Time You Know, It's Already Cost You</h2>
+
+      <p>A missing tooth enters a crusher. A buried drill rod is scooped into a haul truck. A boulder too large for the grizzly hits the feed.</p>
+
+      <p>By the time someone spots it — if they spot it at all — the damage is done. Crushed components. Torn conveyor belts. Unplanned downtime costing hundreds of thousands, sometimes millions.</p>
+
+      <p>Most mining operations still rely on manual visual checks or sensors placed too far downstream to prevent the problem. The harsh reality of remote, dusty, high-temperature sites has kept advanced computer vision out of reach — and the teams capable of building it have been drawn to autonomous vehicles and robotics, not mining.</p>
+
+      <p class="problem__kicker">The result: billions of pounds of equipment operating with almost no intelligent oversight at the point of operation, where it matters most.</p>
+    </div>
+
+    <div class="problem__images">
+      <div class="problem__image-panel">
+        <p class="problem__image-label">Consequence — damaged crusher or torn conveyor belt</p>
+      </div>
+      <div class="problem__image-panel">
+        <p class="problem__image-label">Environment — excavator mid-dig in harsh, dusty conditions</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .problem {
+    background-color: var(--bg);
+  }
+
+  /* ---- Text ---- */
+  .problem__text {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .problem__heading {
+    margin-bottom: var(--space-sm);
+  }
+
+  .problem__kicker {
+    color: var(--heading);
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  /* ---- Split image placeholder ---- */
+  .problem__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .problem__image-panel {
+    aspect-ratio: 4 / 3;
+    background-color: var(--border);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-sm);
+    position: relative;
+  }
+
+  .problem__image-panel::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--nav-text);
+    opacity: 0.2;
+  }
+
+  .problem__image-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.5;
+    max-width: 100%;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .problem__images {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

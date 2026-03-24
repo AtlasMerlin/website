@@ -1,0 +1,203 @@
+---
+---
+
+<section class="how section" id="how-it-works">
+  <div class="container">
+
+    <div class="how__header">
+      <h2>Operational in 72 Hours.<br/>No Disruption. No Complexity.</h2>
+      <p class="how__intro">Atlas Merlin is computer vision out of the box.</p>
+    </div>
+
+    <div class="how__steps">
+
+      <div class="how__step">
+        <span class="how__step-number">01</span>
+        <div class="how__step-content">
+          <h3>Rugged, purpose-built hardware</h3>
+          <p>IP67-rated, vibration-resistant compute units designed for the harshest environments on the planet. Paired with industrial cameras and, where needed, in-cab speakers for operator alerts. LTE and GPS connectivity built in.</p>
+        </div>
+      </div>
+
+      <div class="how__step">
+        <span class="how__step-number">02</span>
+        <div class="how__step-content">
+          <h3>Installed during a standard maintenance window</h3>
+          <p>No extended downtime, no special infrastructure. Your maintenance team installs the hardware and points the camera at the target. Atlas Merlin validates positioning — remotely or on-site, your preference.</p>
+        </div>
+      </div>
+
+      <div class="how__step">
+        <span class="how__step-number">03</span>
+        <div class="how__step-content">
+          <h3>Calibrated and live within days</h3>
+          <p>From installation to operational alerts, typically under 72 hours. A short calibration window, and the system is running.</p>
+        </div>
+      </div>
+
+      <div class="how__step">
+        <span class="how__step-number">04</span>
+        <div class="how__step-content">
+          <h3>You decide who knows what, and when</h3>
+          <p>Alerts go where you need them — audible in-cab, WhatsApp, Slack, Teams, email, or through the Atlas Merlin web portal. Daily summaries, real-time alerts, or both. You define the rules, or we set them up for you.</p>
+        </div>
+      </div>
+
+      <div class="how__step">
+        <span class="how__step-number">05</span>
+        <div class="how__step-content">
+          <h3>Full visibility through one portal</h3>
+          <p>Every deployed unit, every detection, system health, uptime, and alerts — visible in one place. Or let Atlas Merlin monitor it for you.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="how__image">
+      <div class="how__placeholder">
+        <p class="how__placeholder-label">Step-by-step visual: hardware arrives → installed during maintenance window → camera validated → system live and alerting. Or a product shot of the Syslogic Jetson unit and camera in an industrial setting.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .how {
+    background-color: var(--bg);
+  }
+
+  /* ---- Header ---- */
+  .how__header {
+    max-width: 720px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .how__header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .how__intro {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--heading);
+    font-weight: 700;
+  }
+
+  /* ---- Steps ---- */
+  .how__steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: var(--space-lg);
+  }
+
+  .how__step {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+
+  /* Remove left border on first column */
+  .how__step:nth-child(odd) {
+    border-left: none;
+  }
+
+  /* Remove top border on first two items */
+  .how__step:nth-child(1),
+  .how__step:nth-child(2) {
+    border-top: none;
+  }
+
+  /* Last item spans full width if odd number */
+  .how__step:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-left: none;
+  }
+
+  .how__step-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--electric-orange);
+    opacity: 0.35;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+
+  .how__step-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .how__step-content h3 {
+    font-size: 1.1rem;
+  }
+
+  /* ---- Image placeholder ---- */
+  .how__image {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-lg);
+  }
+
+  .how__placeholder {
+    aspect-ratio: 16 / 6;
+    width: 100%;
+    background-color: var(--border);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-sm);
+    position: relative;
+  }
+
+  .how__placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--nav-text);
+    opacity: 0.2;
+  }
+
+  .how__placeholder-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.5;
+    max-width: 100%;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .how__steps {
+      grid-template-columns: 1fr;
+    }
+
+    .how__step {
+      border-left: none;
+    }
+
+    .how__step:nth-child(1) {
+      border-top: none;
+    }
+
+    .how__step:nth-child(2) {
+      border-top: 1px solid var(--border);
+    }
+
+    .how__step:last-child:nth-child(odd) {
+      grid-column: 1;
+    }
+
+    .how__placeholder {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>

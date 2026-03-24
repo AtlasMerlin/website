@@ -1,0 +1,139 @@
+---
+---
+
+<section class="why section" id="why-atlas-merlin">
+  <div class="container">
+
+    <div class="why__header">
+      <h2>Not Just a Product.<br/>An Entire Computer Vision Team.</h2>
+    </div>
+
+    <div class="why__grid">
+
+      <div class="why__item">
+        <h3>Your models get smarter over time</h3>
+        <p>Most hardware purchases are static — performance degrades, and you're left waiting for the next version. Atlas Merlin continuously maintains, updates, and improves your models using data from your own environment. Over time, each deployment evolves into a system uniquely tuned to your site, your conditions, and your operations. There is no one-size-fits-all global version. Your model is yours.</p>
+      </div>
+
+      <div class="why__item">
+        <h3>No AI team required</h3>
+        <p>You don't need data scientists, ML engineers, or anyone sitting behind a screen. Atlas Merlin builds, deploys, monitors, and maintains everything. Your team gets alerts and results — on WhatsApp, email, or whatever works. Mining people should be mining.</p>
+      </div>
+
+      <div class="why__item">
+        <h3>Real-time, regardless of connectivity</h3>
+        <p>Every Atlas Merlin solution processes locally at the edge. Alerts are instant — even when your site has zero connectivity. No cloud round-trip, no latency, no dead zones. When connectivity returns, everything syncs. But the critical decision was already made, on site, in real time.</p>
+      </div>
+
+      <div class="why__item">
+        <h3>Proven and delivering</h3>
+        <p>Atlas Merlin solutions are deployed and operational at large-scale mining operations today, with millions in potential damages prevented. This isn't a pilot. It's production.</p>
+      </div>
+
+    </div>
+
+    <div class="why__image">
+      <div class="why__placeholder">
+        <p class="why__placeholder-label">Model evolution timeline: Month 1: Base model → Month 6: Adapted → Month 12: Tuned to your site. Diagrammatic and clean, not a photograph.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .why {
+    background-color: var(--bg);
+  }
+
+  /* ---- Header ---- */
+  .why__header {
+    max-width: 720px;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ---- Grid ---- */
+  .why__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: var(--space-lg);
+  }
+
+  .why__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+
+  .why__item:nth-child(odd) {
+    border-left: none;
+  }
+
+  .why__item:nth-child(1),
+  .why__item:nth-child(2) {
+    border-top: none;
+  }
+
+  .why__item h3 {
+    font-size: 1.15rem;
+    color: var(--heading);
+  }
+
+  /* ---- Image placeholder ---- */
+  .why__image {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-md);
+  }
+
+  .why__placeholder {
+    aspect-ratio: 16 / 5;
+    width: 100%;
+    background-color: var(--border);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-sm);
+    position: relative;
+  }
+
+  .why__placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--nav-text);
+    opacity: 0.2;
+  }
+
+  .why__placeholder-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.5;
+    max-width: 100%;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .why__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why__item {
+      border-left: none;
+    }
+
+    .why__item:nth-child(2) {
+      border-top: 1px solid var(--border);
+    }
+
+    .why__placeholder {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>

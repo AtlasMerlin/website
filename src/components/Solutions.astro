@@ -1,0 +1,225 @@
+---
+---
+
+<section class="solutions section" id="solutions">
+  <div class="container">
+
+    <div class="solutions__header">
+      <h2>A Suite of Solutions, Proven in Production</h2>
+      <p class="solutions__intro">Every Atlas Merlin solution runs at the edge — processing locally, alerting instantly, regardless of connectivity. Deployed and operational at large-scale mining operations today.</p>
+    </div>
+
+    <!-- Missing Tooth Detector -->
+    <div class="solution">
+      <div class="solution__text">
+        <h3>Missing Tooth Detector</h3>
+        <p>A camera mounted on the excavator watches the bucket continuously. The moment a tooth is broken or missing, the operator receives an instant audible alert — no connectivity required. Stakeholders are notified in real time when connected.</p>
+        <p>One missing tooth left undetected can cause catastrophic damage to crushers and conveyors downstream. Atlas Merlin catches it at the source, before it costs you.</p>
+        <p class="solution__coming-soon">Coming soon: predictive wear-rate tracking, so you'll know when a tooth is approaching failure before it happens.</p>
+      </div>
+      <div class="solution__image">
+        <div class="solution__placeholder">
+          <p class="solution__placeholder-label">Camera-perspective view from a rope shovel looking down at the bucket teeth, with a highlighted missing or damaged tooth</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foreign Object Detector -->
+    <div class="solution solution--reverse">
+      <div class="solution__text">
+        <div class="solution__title-row">
+          <h3>Foreign Object Detector</h3>
+          <span class="solution__badge">World First</span>
+        </div>
+        <p class="solution__kicker">Nothing like this exists anywhere else.</p>
+        <p>A camera mounted on the excavator watches the ground and bucket ahead. When it spots something that shouldn't be there — a drill rod, an old tooth, a cable, buried debris — the operator is alerted instantly.</p>
+        <p>Today, foreign objects are only caught by sensors further downstream, often after the damage has begun. Atlas Merlin detects them at the point of excavation, in real time, before they enter the processing chain.</p>
+      </div>
+      <div class="solution__image">
+        <div class="solution__placeholder">
+          <p class="solution__placeholder-label">Camera POV from excavator with a drill rod or foreign object highlighted in the frame — feels like proof, not marketing</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boulder Monitoring -->
+    <div class="solution">
+      <div class="solution__text">
+        <h3>Boulder Monitoring</h3>
+        <p>A camera positioned above a grizzly crusher monitors incoming material. It estimates boulder size in real time and flags anything too large — or anything that shouldn't be there, like a foreign object that made it through.</p>
+        <p>When connected to the crusher's e-stop system, intervention is automatic. No operator reaction time required.</p>
+        <p>The same system analyses fragmentation patterns, giving your blasting team the data to understand whether charges are producing the right material size — closing the feedback loop between blasting and processing.</p>
+      </div>
+      <div class="solution__image">
+        <div class="solution__placeholder">
+          <p class="solution__placeholder-label">Camera view above a grizzly crusher with size estimation overlays — one boulder flagged as oversized</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Haul Road Monitoring -->
+    <div class="solution solution--reverse">
+      <div class="solution__text">
+        <h3>Haul Road Monitoring</h3>
+        <p>A single camera on a haul road can do more than you'd expect.</p>
+        <p>Originally deployed to monitor pantograph compliance — identifying which trucks are connecting to overhead electrical trolley lines and which aren't — the system expanded to provide a full picture of road activity. Vehicle counts by type, congestion tracking, and real-time dust and visibility monitoring that triggers water truck dispatch when conditions deteriorate.</p>
+        <p>One camera. Multiple operational insights. Each one feeding decisions that reduce cost, fuel usage, and risk.</p>
+      </div>
+      <div class="solution__image">
+        <div class="solution__placeholder">
+          <p class="solution__placeholder-label">Wide-angle haul road view with overlay data — vehicle ID, pantograph status, dust/visibility indicator</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Challenge -->
+    <div class="solution solution--bespoke">
+      <div class="solution__text">
+        <h3>Your Challenge, Our Solution</h3>
+        <p>The solutions above started as conversations with our customers. Yours can too.</p>
+        <p>If you can point a camera at it, and a person could see what needs to be seen, Atlas Merlin can build a solution around it. We work alongside you — developing, testing, and validating in your environment — so you can prove business value quickly before committing to a full site rollout.</p>
+        <p class="solution__kicker">We're not a platform you configure. We're a team that builds what you need.</p>
+        <a href="#contact" class="btn btn--primary solution__cta">Tell Us What You're Facing</a>
+      </div>
+      <div class="solution__image">
+        <div class="solution__placeholder">
+          <p class="solution__placeholder-label">Abstract: camera lens framing an open industrial scene — suggesting possibility. Or a cycle graphic: conversation → development → deployment → results</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .solutions {
+    background-color: var(--bg);
+  }
+
+  /* ---- Header ---- */
+  .solutions__header {
+    max-width: 720px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .solutions__header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .solutions__intro {
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+
+  /* ---- Solution row ---- */
+  .solution {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    padding-block: var(--space-md);
+    border-top: 1px solid var(--border);
+  }
+
+  .solution--reverse .solution__image { order: -1; }
+
+  /* ---- Text ---- */
+  .solution__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .solution__title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .solution__title-row h3 {
+    margin: 0;
+  }
+
+  .solution__badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background-color: var(--electric-orange);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .solution__kicker {
+    color: var(--heading);
+    font-weight: 700;
+  }
+
+  .solution__coming-soon {
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 0.9rem;
+  }
+
+  .solution__cta {
+    align-self: flex-start;
+    margin-top: var(--space-xs);
+    padding: 0.875rem 2rem;
+  }
+
+  /* ---- Image placeholder ---- */
+  .solution__placeholder {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    background-color: var(--border);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-sm);
+    position: relative;
+  }
+
+  .solution__placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--nav-text);
+    opacity: 0.2;
+  }
+
+  .solution__placeholder-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.5;
+    max-width: 100%;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Bespoke solution ---- */
+  .solution--bespoke {
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .solution {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .solution--reverse .solution__image { order: 0; }
+
+    .solution__cta {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+</style>

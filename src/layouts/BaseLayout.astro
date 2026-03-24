@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title       = 'Atlas Merlin — AI-Powered Computer Vision for Mining & Construction',
+  description = 'Real-time computer vision solutions for mining and large-scale construction. Edge-first AI monitoring — from hardware to alerts — fully managed, no technical team required.',
+} = Astro.props;
+
+const siteUrl = 'https://atlasmerlin.com';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={siteUrl} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image"       content={`${siteUrl}/index-socialpreview-1200x630.png`} />
+
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={`${siteUrl}/index-socialpreview-1200x630.png`} />
+
+    <link rel="canonical" href={siteUrl} />
+
+    <link rel="icon" type="image/png" href="/favicon-32x32-lightmode.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="/favicon-32x32-darkmode.png"  media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon"      href="/favicon-180x180-appletouch.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Atlas Merlin",
+      "url": siteUrl,
+      "logo": `${siteUrl}/darklogo_for_lightbackground_desktop.svg`,
+      "description": description,
+      "email": "hello@atlasmerlin.com",
+      "sameAs": [
+        "https://atlasmerlin.com",
+        "https://atlasmerlin.ai"
+      ],
+      "knowsAbout": [
+        "Computer vision for mining",
+        "Edge AI",
+        "Industrial AI monitoring",
+        "Missing tooth detection",
+        "Foreign object detection",
+        "Mining safety technology"
+      ]
+    })} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

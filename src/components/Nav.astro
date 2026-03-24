@@ -1,0 +1,184 @@
+---
+import Logo from './Logo.astro';
+---
+
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+
+    <a href="#hero" aria-label="Atlas Merlin home">
+      <Logo />
+    </a>
+
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#solutions"       class="nav__link">Solutions</a>
+      <a href="#how-it-works"    class="nav__link">How It Works</a>
+      <a href="#why-atlas-merlin"class="nav__link">Why Atlas Merlin</a>
+    </nav>
+
+    <a href="#contact" class="btn btn--outline nav__cta">Talk to Us</a>
+
+    <button
+      class="nav__hamburger"
+      id="nav-hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
+    <a href="#solutions"        class="nav__mobile-link">Solutions</a>
+    <a href="#how-it-works"     class="nav__mobile-link">How It Works</a>
+    <a href="#why-atlas-merlin" class="nav__mobile-link">Why Atlas Merlin</a>
+    <a href="#contact"          class="nav__mobile-link nav__mobile-cta">Talk to Us</a>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.25s ease;
+  }
+
+  .nav.scrolled {
+    background-color: var(--nav-bg);
+    box-shadow: 0 1px 0 var(--nav-border);
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    height: var(--nav-height);
+    gap: var(--space-md);
+  }
+
+  /* ---- Links ---- */
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-left: auto;
+  }
+
+  .nav__link {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--nav-text);
+    opacity: 0.8;
+    transition: opacity 150ms ease;
+    white-space: nowrap;
+  }
+
+  .nav__link:hover { opacity: 1; }
+
+  /* ---- CTA ---- */
+  .nav__cta {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  /* ---- Hamburger ---- */
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .nav__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--nav-text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+  }
+
+  .nav__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav__hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---- Mobile menu ---- */
+  .nav__mobile {
+    display: none;
+    flex-direction: column;
+    background-color: var(--nav-bg);
+    border-top: 1px solid var(--nav-border);
+    padding-bottom: var(--space-sm);
+  }
+
+  .nav__mobile.open { display: flex; }
+
+  .nav__mobile-link {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--nav-text);
+    opacity: 0.7;
+    padding: 0.75rem var(--space-md);
+    transition: opacity 150ms ease;
+  }
+
+  .nav__mobile-link:hover { opacity: 1; }
+
+  .nav__mobile-cta {
+    margin: var(--space-sm) var(--space-md) 0;
+    padding: 0.75rem var(--space-md);
+    background-color: var(--electric-orange);
+    color: var(--warm-white);
+    opacity: 1;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .nav__mobile-cta:hover { background-color: #e55a0d; opacity: 1; }
+
+  /* ---- Mobile breakpoint ---- */
+  @media (max-width: 768px) {
+    .nav__links, .nav__cta { display: none; }
+    .nav__hamburger { display: flex; }
+  }
+</style>
+
+<script>
+  const nav       = document.getElementById('nav')!;
+  const hamburger = document.getElementById('nav-hamburger')!;
+  const mobile    = document.getElementById('nav-mobile')!;
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  if (window.scrollY > 10) nav.classList.add('scrolled');
+
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!open));
+    mobile.setAttribute('aria-hidden', String(open));
+    mobile.classList.toggle('open', !open);
+  });
+
+  mobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobile.setAttribute('aria-hidden', 'true');
+      mobile.classList.remove('open');
+    });
+  });
+</script>
