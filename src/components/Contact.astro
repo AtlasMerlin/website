@@ -68,7 +68,24 @@
 <style>
   .contact {
     background-color: var(--deep-navy);
+    background-image: url('/atlas-office-logo.png');
+    background-size: cover;
+    background-position: center;
     color: var(--warm-white);
+    position: relative;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 26, 46, 0.88);
+    z-index: 0;
+  }
+
+  .contact__inner {
+    position: relative;
+    z-index: 1;
   }
 
   /* ---- Layout ---- */

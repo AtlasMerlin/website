@@ -121,7 +121,7 @@ src/
 ---
 
 ## Contact Section
-- Deep navy background (`var(--deep-navy)`) — visually distinct from rest of page
+- Background: `public/atlas-office-logo.png` (office exterior with logo on rock) with `rgba(15, 26, 46, 0.88)` overlay via `::before` pseudo-element — photo subtly visible beneath the dark navy
 - Two-column: form left, "Got a Challenge?" aside right (copper left-border accent)
 - **Formspree:** AJAX submit with `Accept: application/json` header
 - **Submit button states:**
