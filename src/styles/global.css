@@ -125,6 +125,7 @@ p {
 
 .section {
   padding: var(--space-md) 0;
+  scroll-margin-top: var(--nav-height);
 }
 
 /* ============================================================
