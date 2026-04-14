@@ -233,21 +233,42 @@
       var rafId = null;
 
       function step() {
-        velocity *= 0.94;
+        var snapTarget = Math.round(rotation / 90) * 90;
+        var timeSinceWheel = Date.now() - lastWheelTime;
+
+        if (timeSinceWheel > 200 && Math.abs(velocity) < 5) {
+          // Settling: spring toward nearest 90° with damping
+          velocity += (snapTarget - rotation) * 0.06;
+          velocity *= 0.82;
+        } else {
+          // Free-spin: natural friction
+          velocity *= 0.94;
+        }
+
         rotation += velocity;
 
         for (var i = 0; i < diamonds.length; i++) {
           diamonds[i].style.transform = 'rotate(' + rotation + 'deg)';
         }
 
-        if (Math.abs(velocity) > 0.05) {
+        var finalSnap = Math.round(rotation / 90) * 90;
+        var settled = Math.abs(velocity) < 0.01 && Math.abs(rotation - finalSnap) < 0.1;
+
+        if (!settled) {
           rafId = requestAnimationFrame(step);
         } else {
+          rotation = finalSnap;
+          for (var j = 0; j < diamonds.length; j++) {
+            diamonds[j].style.transform = 'rotate(' + finalSnap + 'deg)';
+          }
           rafId = null;
         }
       }
 
+      var lastWheelTime = 0;
+
       function kick() {
+        lastWheelTime = Date.now();
         if (!rafId) rafId = requestAnimationFrame(step);
       }
 
